@@ -5,6 +5,11 @@ library(httr)
 
 # Write a function that allows you to specify a movie, that does the following:
 GetReview <- function(movie) {
+  #key: 3b00457fc7d24dc5bdc33ca254303d4a
+  base.url<- "https://api.nytimes.com/svc/movies/v2/reviews/search.json?"
+  query.params <- list(query = movie, api_key = "3b00457fc7d24dc5bdc33ca254303d4a")
+  response <- GET(base.url, query = query.params)
+  body <- content(response, "text")
   
   # Construct a search query using YOUR api key
   # The base URL is https://api.nytimes.com/svc/movies/v2/reviews/search.json?
@@ -14,7 +19,7 @@ GetReview <- function(movie) {
   
   
   # Request data using your search query
-  
+
   
   # What type of variable does this return?
   

@@ -2,10 +2,12 @@
 
 # libraries
 library(dplyr)
-
+install.packages(ti
 # We'll be using the mtcars dataset -- adding rowname as a column
 vehicle <- add_rownames(mtcars, var='car')
+vehicle <- rownames_to_column(mtcars, var = 'car')
 
+vehicle <- mutate(mtcars, rowname = 'car')
 
 ######## buggy ######### ----------------------------------------------
 
